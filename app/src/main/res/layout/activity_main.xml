@@ -4,15 +4,63 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
+    android:background="@drawable/fondo_lab5"
     tools:context=".MainActivity">
 
     <TextView
+        android:id="@+id/textView"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:text="Hello World!"
+        android:layout_marginTop="-80dp"
+        android:textColor="@color/white"
+        android:text="Programa de Tutorías"
+        android:textAlignment="center"
+        android:textSize="32dp"
+        android:textStyle="italic"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.5"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="@+id/view" />
+
+    <Button
+        android:id="@+id/buttonTutor"
+        android:layout_width="155dp"
+        android:layout_height="47dp"
+        android:backgroundTint="@android:color/holo_purple"
+        android:text="Tutor"
+        android:textColor="@color/black"
+        android:textSize="20dp"
+        app:layout_constraintTop_toTopOf="@+id/view"
+        app:layout_constraintStart_toStartOf="@+id/view"
+        app:layout_constraintEnd_toEndOf="@+id/view"
+        app:layout_constraintBottom_toTopOf="@+id/buttonTrabajador" />
+
+    <Button
+        android:id="@+id/buttonTrabajador"
+        android:layout_width="155dp"
+        android:layout_height="wrap_content"
+        android:layout_marginBottom="1dp"
+        android:textSize="20dp"
+        android:textColor="@color/black"
+        android:backgroundTint="@android:color/holo_purple"
+        android:text="Trabajador"
+        app:layout_constraintTop_toBottomOf="@+id/buttonTutor"
+        app:layout_constraintStart_toStartOf="@+id/view"
+        app:layout_constraintEnd_toEndOf="@+id/view"
+        app:layout_constraintBottom_toBottomOf="@+id/view"/>
+
+    <View
+        android:id="@+id/view"
+        android:layout_width="264dp"
+        android:layout_height="351dp"
+        android:alpha="0.5"
+        android:background="@drawable/fondo_redondeado"
+        android:elevation="-10dp"
+        app:cardCornerRadius="20dp"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent" />
+
 
 </androidx.constraintlayout.widget.ConstraintLayout>
