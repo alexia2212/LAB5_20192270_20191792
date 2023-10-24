@@ -1,4 +1,4 @@
-package com.example.lab5_20192270_20191792;
+package com.example.lab5_20192270_20191792.Trabajador;
 
 import androidx.appcompat.app.AppCompatActivity;
 

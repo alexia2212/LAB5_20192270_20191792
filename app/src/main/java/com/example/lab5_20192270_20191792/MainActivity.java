@@ -5,6 +5,7 @@ import androidx.appcompat.app.AppCompatActivity;
 import android.content.Intent;
 import android.os.Bundle;
 
+import com.example.lab5_20192270_20191792.Trabajador.TrabajadorActivity;
 import com.example.lab5_20192270_20191792.databinding.ActivityMainBinding;
 
 public class MainActivity extends AppCompatActivity {
