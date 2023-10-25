@@ -45,6 +45,7 @@ public class DescargarHorarioTrabajador extends AppCompatActivity {
     String id;
     String hr;
     Boolean hayTuto;
+    String TAG= "msg-test";
     ActivityDescargarHorarioTrabajadorBinding binding;
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -53,16 +54,13 @@ public class DescargarHorarioTrabajador extends AppCompatActivity {
         setContentView(binding.getRoot());
         createRetrofitService();
         createNotificationChannelTrabajador();
-
-
         Intent intent = getIntent();
         id = intent.getStringExtra("id");
-        Log.d("msg-test", "Id ingresado: "+intent.getStringExtra("id"));
+        Log.d(TAG, "Id ingresado: "+id);
         hr = intent.getStringExtra("hr");
-        Log.d("msg-test", "Se recibio correctamente: "+intent.getStringExtra("hr"));
+        Log.d(TAG, "HR: "+hr);
 
         //En caso el trabajor no tenga ninguna tutoría
-
         if(hr.equalsIgnoreCase("No hay ninguna asesoría")){
             binding.buttonDescargarHorario.setVisibility(View.GONE);
             binding.editTextTextMultiLineFeedback.setVisibility(View.GONE);
@@ -72,16 +70,13 @@ public class DescargarHorarioTrabajador extends AppCompatActivity {
             if(Build.VERSION.SDK_INT>= Build.VERSION_CODES.O){
                 DateTimeFormatter formatter = DateTimeFormatter.ofPattern("yyyy-mm-dd HH:mm:ss");
                 LocalDateTime horario1 = LocalDateTime.parse(hr,formatter);
-
                 LocalDateTime currentDateTime = LocalDateTime.now();
                 if(horario1.isAfter(currentDateTime)){
                     binding.editTextTextMultiLineFeedback.setVisibility(View.GONE);
                     binding.button9.setVisibility(View.GONE);
-
                 }
             }
         }
-
         binding.buttonDescargarHorario.setOnClickListener(view -> {
             if(hayTuto){
                 String permiss = Manifest.permission.WRITE_EXTERNAL_STORAGE;
@@ -109,7 +104,7 @@ public class DescargarHorarioTrabajador extends AppCompatActivity {
 
     public void createRetrofitService(){
         employeeRepo = new Retrofit.Builder()
-                .baseUrl("https://8r7fm6zj-3010.brs.devtunnels.ms/")
+                .baseUrl("https://8r7fm6zj-3010.brs.devtunnels.ms")
                 .addConverterFactory(GsonConverterFactory.create())
                 .build().create(EmployeeRepo.class);
 
@@ -160,21 +155,7 @@ public class DescargarHorarioTrabajador extends AppCompatActivity {
         }
     }
 
-    public void notifyHorario(){
-        NotificationCompat.Builder builder2 = new NotificationCompat.Builder(this, channelId)
-                .setContentTitle("Horario de Tutorias agendadas")
-                .setSmallIcon(R.drawable.baseline_accessibility_24)
-                .setContentText("Usted tiene agendada una tutoria para el día: "+ hr)
-                .setPriority(NotificationCompat.PRIORITY_DEFAULT)
-                .setAutoCancel(true);
 
-        Notification notification1 = builder2.build();
-        NotificationManagerCompat notificationManagerCompat = NotificationManagerCompat.from(this);
-        if(ActivityCompat.checkSelfPermission(this, POST_NOTIFICATIONS) == PackageManager.PERMISSION_GRANTED){
-            notificationManagerCompat.notify(1, notification1);
-
-        }
-    }
 
     ActivityResultLauncher<String> launcher = registerForActivityResult(
             new ActivityResultContracts.RequestPermission(),
@@ -192,7 +173,6 @@ public class DescargarHorarioTrabajador extends AppCompatActivity {
         Uri downloadUri = Uri.parse(url);
 
         DownloadManager.Request requests = new DownloadManager.Request(downloadUri);
-
         requests.setAllowedNetworkTypes(DownloadManager.Request.NETWORK_WIFI | DownloadManager.Request.NETWORK_MOBILE);
         requests.setTitle(nameFile);
         requests.setAllowedOverRoaming(false);
