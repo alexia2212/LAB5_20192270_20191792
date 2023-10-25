@@ -104,7 +104,7 @@ public class DescargarHorarioTrabajador extends AppCompatActivity {
 
     public void createRetrofitService(){
         employeeRepo = new Retrofit.Builder()
-                .baseUrl("https://8r7fm6zj-3010.brs.devtunnels.ms")
+                .baseUrl("http://10.0.1.1:3010")
                 .addConverterFactory(GsonConverterFactory.create())
                 .build().create(EmployeeRepo.class);
 

@@ -42,7 +42,7 @@ public class TrabajadorActivity extends AppCompatActivity {
     String TAG = "msg-test";
     String salida;
     EmployeeRepo employeeRepo = new Retrofit.Builder()
-            .baseUrl("http://")
+            .baseUrl("http://10.0.1.1:3010")
             .addConverterFactory(GsonConverterFactory.create())
             .build().create(EmployeeRepo.class);
     @Override
