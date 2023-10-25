@@ -29,7 +29,7 @@ public class AsignarTutoriaActivity extends AppCompatActivity {
         setContentView(binding.getRoot());
 
         trabajadorService = new Retrofit.Builder()
-                .baseUrl("https://8r7fm6zj-3010.brs.devtunnels.ms")
+                .baseUrl("http://10.0.2.2:3010")
                 .addConverterFactory(GsonConverterFactory.create())
                 .build()
                 .create(ServiceTrabajador.class);
