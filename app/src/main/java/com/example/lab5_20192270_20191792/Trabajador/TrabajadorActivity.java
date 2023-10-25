@@ -19,9 +19,6 @@ import com.example.lab5_20192270_20191792.databinding.ActivityTrabajadorBinding;
 public class TrabajadorActivity extends AppCompatActivity {
 
     String channelId = "channelHighPriorTutor";
-
-
-
     ActivityTrabajadorBinding binding;
     @Override
     protected void onCreate(Bundle savedInstanceState) {
