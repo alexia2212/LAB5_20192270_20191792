@@ -2,58 +2,95 @@
 <androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/frameLayout6"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     android:background="@drawable/fondochamba"
-    tools:context=".AsignarTutoriaActivity">
-
+    tools:context=".AsignarTutoriaActivity" >
 
     <TextView
-        android:id="@+id/textView4"
+        android:id="@+id/errorIDDescargar2"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:text="Flujo Tutor"
-        android:textSize="33dp"
-        android:textColor="@color/white"
-        android:textStyle="italic"
-        app:layout_constraintBottom_toBottomOf="parent"
+        android:layout_marginTop="68dp"
+        android:text=""
+        android:textColor="@color/rojo"
+        android:textSize="20sp"
+        android:textStyle="bold"
         app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.498"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="0.2" />
+        app:layout_constraintTop_toBottomOf="@+id/btnasignar" />
+
+    <TextView
+        android:id="@+id/textView5"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="44dp"
+        android:text="ID del empleado que tendrá la tutoria:"
+        android:textColor="@color/white"
+        android:textSize="20sp"
+        android:textStyle="bold"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.591"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/idTextTutor" />
+
+    <TextView
+        android:id="@+id/textView7"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="96dp"
+        android:text="Ingrese su ID:"
+        android:textColor="@color/white"
+        android:textSize="20sp"
+        android:textStyle="bold"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.146"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
 
     <EditText
-        android:id="@+id/editTextTextCodigo"
-        android:layout_width="230dp"
-        android:layout_height="73dp"
-        android:layout_marginTop="92dp"
-        android:background="@color/rojo"
+        android:id="@+id/idTextEmpleado"
+        android:layout_width="wrap_content"
+        android:layout_height="48dp"
+        android:layout_marginTop="24dp"
+        android:background="@drawable/edittext_buscador_border"
         android:ems="10"
-        android:inputType="text"
-        android:text="Código del empleado: "
-        android:textColor="@color/white"
+
+        android:hint="ID"
+        android:inputType="textPersonName"
+        android:paddingStart="20dp"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.447"
+        app:layout_constraintHorizontal_bias="0.522"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/textView4"
-        app:layout_constraintVertical_bias="0.555" />
+        app:layout_constraintTop_toBottomOf="@+id/textView5" />
 
     <EditText
-        android:id="@+id/editTextTextId"
-        android:layout_width="230dp"
-        android:layout_height="73dp"
-        android:layout_marginTop="244dp"
-        android:background="@color/rojo"
+        android:id="@+id/idTextTutor"
+        android:layout_width="wrap_content"
+        android:layout_height="48dp"
+        android:layout_marginTop="12dp"
+        android:background="@drawable/edittext_buscador_border"
         android:ems="10"
-        android:inputType="text"
-        android:text="Id del empleado: "
-        android:textColor="@color/white"
-        app:layout_constraintBottom_toBottomOf="parent"
+
+        android:hint="ID"
+        android:inputType="textPersonName"
+        android:paddingStart="20dp"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.447"
+        app:layout_constraintHorizontal_bias="0.522"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/textView4"
-        app:layout_constraintVertical_bias="0.0" />
+        app:layout_constraintTop_toBottomOf="@+id/textView7" />
 
-
+    <Button
+        android:id="@+id/btnasignar"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="60dp"
+        android:backgroundTint="@color/rojo"
+        android:text="ASIGNAR TUTORIA"
+        android:textSize="20sp"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/idTextEmpleado" />
 </androidx.constraintlayout.widget.ConstraintLayout>

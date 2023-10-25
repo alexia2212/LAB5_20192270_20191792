@@ -7,7 +7,7 @@
     android:background="@drawable/fondochamba"
     tools:context=".TutorActivity">
     <Button
-        android:id="@+id/button7"
+        android:id="@+id/descargaboton"
         android:layout_width="250dp"
         android:layout_height="wrap_content"
         android:text="Descargar Lista de Trabajadores"
@@ -20,7 +20,7 @@
         app:layout_constraintVertical_bias="0.45" />
 
     <Button
-        android:id="@+id/button8"
+        android:id="@+id/buscartrabajador"
         android:layout_width="250dp"
         android:layout_height="wrap_content"
         android:backgroundTint="@android:color/holo_red_light"
@@ -34,7 +34,7 @@
         app:layout_constraintVertical_bias="0.609" />
 
     <Button
-        android:id="@+id/button9"
+        android:id="@+id/asignartutoria"
         android:layout_width="250dp"
         android:layout_height="wrap_content"
         android:backgroundTint="@android:color/holo_red_light"
