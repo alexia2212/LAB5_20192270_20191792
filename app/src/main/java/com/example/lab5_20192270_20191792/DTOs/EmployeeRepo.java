@@ -9,7 +9,7 @@ import retrofit2.http.Query;
 
 public interface EmployeeRepo {
     @GET("/trabajador/tutoria")
-    Call<TrabajadorTutoria> getFechaTutoria(@Query("id") int id);
+    Call<TrabajadorTutoria> getFechaTutoria(@Query("codigo") int codigo);
     @POST("/trabajador/feedback")
     Call<UsuarioValidarDTO> postFeedback(@Query("employeeId") int id, @Query("employee_feedback") String feedback);
 }
